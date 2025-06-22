@@ -57,7 +57,8 @@ You must clone and run the NASA Open MCT repository locally on `http://localhost
 `git clone https://github.com/nasa/openmct.git`  
 `cd openmct`  
 `npm install`  
-`npm run start`
+`npm run start`  
+(Make sure this server is running while you execute the tests)
 
 Then, in a separate terminal, run the tests from this repository:
 
@@ -78,6 +79,15 @@ Then, in a separate terminal, run the tests from this repository:
 
 ---
 
+## 🧰 npm Scripts
+
+- `npm run test` — run Cypress tests with Allure enabled  
+- `npm run test:allure` — run tests and automatically generate Allure report  
+- `npm run allure:report` — generate Allure report from results  
+- `npm run allure:open` — open generated Allure report in browser
+
+---
+
 ## 📂 Project Structure & Configuration Files
 
 - `cypress/support/e2e.js`  
@@ -91,29 +101,29 @@ Then, in a separate terminal, run the tests from this repository:
 
 ---
 
-## 🛠️ Additional Notes & Allure Report Usage
+## 🧾 Generating and Viewing Allure Reports
 
-- **Allure CLI** must be installed globally to generate and open test reports.  
-  On Windows, you can install it via Scoop:  
-  `scoop install allure`
+The Allure report is **automatically generated** after each test run using the script:
 
-- Tests are configured to retry once in case of failure, which helps with flaky tests.
+`npm run test:allure`
 
-- Chrome web security is disabled (`chromeWebSecurity: false`) to facilitate cross-origin testing scenarios.
+This script:  
+- runs the tests (`cypress run`),  
+- generates the report in the `./allure-report` folder,  
+- **does not open the report in the browser automatically** – you can open it manually whenever you want.
 
-- `testIsolation: false` disables automatic test isolation, useful when tests depend on each other.
+### ✅ To manually open the report:
 
-### Generating and Viewing Allure Reports
+`npm run allure:open`
 
-Common commands to generate and open Allure reports:
+### 🛠️ Alternatively, using the Allure CLI directly:
 
-`allure generate ./allure-results -o ./allure-report` — generate the report from results folder  
-`allure open ./allure-report` — open the generated report in your default browser
+`allure generate ./allure-results -o ./allure-report` — generates the report  
+`allure open ./allure-report` — opens the report in your browser
 
-You can also use the provided npm scripts to automate these actions:
-
-`npm run allure:report` — generate the report  
-`npm run allure:open` — open the report
+> 💡 Make sure you have the **Allure CLI** installed globally.  
+> On Windows, installation via Scoop is recommended:  
+> `scoop install allure`
 
 ---
 
@@ -122,7 +132,8 @@ You can also use the provided npm scripts to automate these actions:
 - [NASA Open MCT GitHub](https://github.com/nasa/openmct)  
 - [Cypress Documentation](https://docs.cypress.io)  
 - [Allure Cypress](https://www.npmjs.com/package/allure-cypress)  
-- [cypress-downloadfile Plugin](https://github.com/NoriSte/cypress-downloadfile)
+- [cypress-downloadfile Plugin](https://github.com/NoriSte/cypress-downloadfile)  
+- [Allure Framework](https://docs.qameta.io/allure/)
 
 ---
 
@@ -131,4 +142,3 @@ You can also use the provided npm scripts to automate these actions:
 I worked on automated tests for NASA Open MCT — NASA's modern platform for space data visualization, used by the agency and the scientific community worldwide.
 
 This project is my independent educational initiative aimed at developing practical skills in web application testing.
- 
