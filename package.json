@@ -4,10 +4,10 @@
   "description": "NASA OpenMCT Cypress automated tests",
   "main": "index.js",
   "scripts": {
-    "test": "CYPRESS_ALLURE=true npx cypress run",
+    "test": "set CYPRESS_ALLURE=true && npx cypress run",
     "allure:report": "allure generate allure-results --clean -o allure-report",
     "allure:open": "allure open allure-report",
-    "test:allure": "npm run test && npm run allure:report && npm run allure:open"
+    "test:allure": "npm run test && npm run allure:report"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/MiRGB/NASA_OpenMCT_Cypress_tests#readme",
   "devDependencies": {
+    "allure-commandline": "^2.34.0",
     "allure-cypress": "^3.3.0",
     "cypress": "^14.4.1",
     "cypress-downloadfile": "^1.2.4"
