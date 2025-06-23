@@ -7,7 +7,7 @@ This project is part of my portfolio and demonstrates Cypress testing for comple
 ---
 
 👉 **Check out the generated Allure report here:**  
-[View Allure Report](https://mirgb.github.io/NASA_OpenMCT_Cypress_tests/docs/)
+[View Allure Report](https://mirgb.github.io/NASA_OpenMCT_Cypress_tests/)
 
 ---
 
