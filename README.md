@@ -7,7 +7,7 @@ This project is part of my portfolio and demonstrates Cypress testing for comple
 ---
 
 👉 **Check out the generated Allure report here:**  
-[View Allure Report](https://mirgb.github.io/NASA_OpenMCT_Cypress_tests/)
+📈 [**View Allure Report**](https://mirgb.github.io/NASA_Open_MCT_Cypress_tests/)
 
 ---
 
@@ -43,7 +43,7 @@ Event listeners configured to:
 
 Clone the repository and install dependencies:
 
-`git clone https://github.com/MiRGB/NASA_OpenMCT_Cypress_tests.git`  
+`git clone https://github.com/MiRGB/NASA_Open_MCT_Cypress_tests.git`  
 `cd NASA_OpenMCT_Cypress_tests`  
 `npm install`
 
