@@ -1,6 +1,10 @@
+const selectors = {
+    clockName: '#form-name',
+};
+
 class ClockWindow {
     get clockName() {
-        return cy.get('#form-name');
+        return cy.get(selectors.clockName);
     }
 
     get createClockBtn() {

@@ -1,54 +1,70 @@
+const selectors = {
+    plotSeriesItem: 'span[aria-label="Expand SensorA Plot Series Options"]',
+    valueOption: 'ul.c-tree li:nth-child(1) div.grid-cell.value > select',
+    alarmMarkersCheckbox: '#alarm-markers-checkbox',
+    colourBtn: '.c-color-swatch',
+    darkYellowBtn: 'div[style="background: rgb(149, 177, 38);"]',
+    logModeCheckbox: '#log-mode-input-1',
+    stylesOptionsBtn: 'div[title="Styles"]',
+    bgColourBtn: 'button[title="Set background color"]',
+    whiteColour: 'div[title="#ffffff"]',
+    bgColourPointer: '.icon-paint-bucket .c-swatch',
+    fontColourBtn: 'button[title="Set text color"]',
+    orangeColour: 'div[title="#ff9900"]',
+    fontColourPointer: '.icon-font .c-swatch',
+};
+
 class EditingRightBar {
     get plotSeriesItem() {
-        return cy.get('span[aria-label="Expand SensorA Plot Series Options"]');
+        return cy.get(selectors.plotSeriesItem);
     }
 
     get valueOption() {
-        return cy.get('ul.c-tree li:nth-child(1) div.grid-cell.value > select');
+        return cy.get(selectors.valueOption);
     }
 
     get alarmMarkersCheckbox() {
-        return cy.get('#alarm-markers-checkbox');
+        return cy.get(selectors.alarmMarkersCheckbox);
     }
 
     get colourBtn() {
-        return cy.get('.c-color-swatch');
+        return cy.get(selectors.colourBtn);
     }
 
     get darkYellowBtn() {
-        return cy.get('div[style="background: rgb(149, 177, 38);"]');
+        return cy.get(selectors.darkYellowBtn);
     }
 
     get logModeCheckbox() {
-        return cy.get('#log-mode-input-1');
+        return cy.get(selectors.logModeCheckbox);
     }
 
     get stylesOptionsBtn() {
-        return cy.get('div[title="Styles"]');
+        return cy.get(selectors.stylesOptionsBtn);
     }
 
     get bgColourBtn() {
-        return cy.get('button[title="Set background color"]');
+        return cy.get(selectors.bgColourBtn);
     }
 
-    get blackColour() {
-        return cy.get('div[title="#000000"]');
+    get whiteColour() {
+        return cy.get(selectors.whiteColour);
     }
 
     get bgColourPointer() {
-        return cy.get('.icon-paint-bucket .c-swatch');
+        return cy.get(selectors.bgColourPointer);
     }
 
     get fontColourBtn() {
-        return cy.get('button[title="Set text color"]');
+        return cy.get(selectors.fontColourBtn);
     }
 
     get orangeColour() {
-        return cy.get('div[title="#ff9900"]');
+        return cy.get(selectors.orangeColour);
     }
 
     get fontColourPointer() {
-        return cy.get('.icon-font .c-swatch');
+        return cy.get(selectors.fontColourPointer);
     }
 
     changeToOrange() {
@@ -59,8 +75,8 @@ class EditingRightBar {
         this.fontColourBtn.click();
     }
 
-    changeToBlack() {
-        this.blackColour.click();
+    changeToWhite() {
+        this.whiteColour.click();
     }
 
     changeBgColour() {

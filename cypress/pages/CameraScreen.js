@@ -1,14 +1,20 @@
+const selectors = {
+    stopCameraBtn: 'button[aria-label="Pause automatic scrolling of image thumbnails"]',
+    focusedImage: 'img[aria-label="Focused Image"]',
+    previousImage: 'button[title="Previous image"]',
+};
+
 class CameraScreen {
     get stopCameraBtn() {
-        return cy.get('button[aria-label="Pause automatic scrolling of image thumbnails"]');
+        return cy.get(selectors.stopCameraBtn);
     }
 
     get focusedImage() {
-        return cy.get('img[aria-label="Focused Image"]');
+        return cy.get(selectors.focusedImage);
     }
 
     get previousImage() {
-        return cy.get('button[title="Previous image"]');
+        return cy.get(selectors.previousImage);
     }
 
     compareImagesSrc() {

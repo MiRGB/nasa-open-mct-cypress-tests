@@ -1,18 +1,24 @@
+const selectors = {
+    displayLayoutName: '#form-name',
+    myItemsElement: 'div.c-form-row__controls > div > div.c-tree-and-search__tree.c-tree > div.c-tree__scrollable > div > div:nth-child(1)',
+    displayLayoutBarName: 'span[aria-label="Browse bar object name"]',
+};
+
 class DisplayLayout {
     get displayLayoutName() {
-        return cy.get('#form-name');
+        return cy.get(selectors.displayLayoutName);
     }
 
     get myItemsElement() {
-        return cy.get('body > div.l-overlay-wrapper.l-overlay-dialog > div > div.c-overlay__outer > div > div > div > div > form > div.c-form__section.grows > div > div.c-form-row__controls > div > div.c-tree-and-search__tree.c-tree > div.c-tree__scrollable > div > div:nth-child(1) > div > a > div.c-tree__item__name.c-object-label__name');
+        return cy.get(selectors.myItemsElement);
     }
-    
+
     get displayLayoutCreateBtn() {
         return cy.contains('button', 'Ok');
     }
 
     get displayLayoutBarName() {
-        return cy.get('span[aria-label="Browse bar object name"]');
+        return cy.get(selectors.displayLayoutBarName);
     }
 
     createDisplayLayout() {

@@ -7,85 +7,86 @@ import DisplayLayoutWindow from "../pages/DisplayLayoutWindow";
 import Notifications from "../pages/Notifications";
 import CameraWindow from "../pages/CameraWindow";
 import CameraScreen from "../pages/CameraScreen";
-import { cameraTitle, delayValue } from "../fixtures/cameraElement.json";
-import { displayLayoutTitle } from "../fixtures/displayLayout.json";
 
 describe('Camera screen', () => {
-    it('visit dashboard', () => {
-        Base.startOpenMCT();
-        // logo should be visible
-        MainScreen.mainLogo.should('be.visible');
+  let components;
+
+  before(() => {
+    cy.fixture("components.json").then((data) => {
+      components = data;
     });
+  });
 
-    it('add display layout', () => {
-        // create element
-        MainScreen.createElementMenu();
-        CreateMenu.createDisplayLayout();
+  it('visit dashboard', () => {
+    Base.startOpenMCT();
+    // logo should be visible
+    MainScreen.mainLogo.should('be.visible');
+  });
 
-        // set name
-        DisplayLayoutWindow.fillName(displayLayoutTitle);
-        DisplayLayoutWindow.displayLayoutName.should('have.value', displayLayoutTitle);
+  it('add display layout', () => {
+    // create element
+    MainScreen.createElementMenu();
+    CreateMenu.createDisplayLayout();
 
-        // click on My Items and save overlay plot element
-        DisplayLayoutWindow.selectMyItemsElement();
-        DisplayLayoutWindow.createDisplayLayout();
-        DisplayLayoutWindow.displayLayoutBarName.should('contain.text', displayLayoutTitle);
-        MainScreen.saveEditingElement();
-        MainScreen.saveAndFinish();
-        
-        // success alert verify
-        Notifications.successAlert.should('be.visible');
-    });
+    // set name
+    DisplayLayoutWindow.fillName(components.displayLayout.title);
+    DisplayLayoutWindow.displayLayoutName.should('have.value', components.displayLayout.title);
 
-    it('add camera', () => {
-        // create element
-        MainScreen.createElementMenu();
-        CreateMenu.createCameraImg();
+    // click on My Items and save overlay plot element
+    DisplayLayoutWindow.selectMyItemsElement();
+    DisplayLayoutWindow.createDisplayLayout();
+    DisplayLayoutWindow.displayLayoutBarName.should('contain.text', components.displayLayout.title);
+    MainScreen.saveElement();
+    
+    // success alert verify
+    Notifications.successAlert.should('be.visible');
+  });
 
-        // set name
-        CameraWindow.fillName(cameraTitle);
-        CameraWindow.cameraName.should('have.value', cameraTitle);
+  it('add camera', () => {
+    // create element
+    MainScreen.createElementMenu();
+    CreateMenu.createCameraImg();
 
-        // set load delay
-        CameraWindow.setLoadDelay(delayValue);
-        CameraWindow.loadDelayInput.should('have.value', delayValue);
+    // set name
+    CameraWindow.fillName(components.camera.title);
+    CameraWindow.cameraName.should('have.value', components.camera.title);
 
-        // save element
-        CameraWindow.createCamera();
+    // set load delay
+    CameraWindow.setLoadDelay(components.camera.delay);
+    CameraWindow.loadDelayInput.should('have.value', components.camera.delay);
 
-        // image verify
-        MainScreen.imageCanvas.should('be.visible');
+    // save element
+    CameraWindow.createCamera();
 
-        // success alert verify
-        Notifications.successAlert.should('be.visible');
-    });
+    // image verify
+    MainScreen.imageCanvas.should('be.visible');
 
-    it('camera verify', () => {
-        // select real time
-        MainScreen.openTimeMenu();
-        MainScreen.openTimeMode();
-        MainScreen.setRealTime();
+    // success alert verify
+    Notifications.successAlert.should('be.visible');
+  });
 
-        // verify
-        MainScreen.timeBar.should('have.css', 'background-color', 'rgb(68, 88, 144)');
+  it('camera verify', () => {
+    // select real time
+    MainScreen.setRealTimeData();
 
-        // stop images and verify
-        CameraScreen.stopCamera();
-        CameraScreen.stopCameraBtn.should('have.css', 'background-color', 'rgb(255, 153, 0)');
+    // verify
+    MainScreen.timeBar.should('have.css', 'background-color', 'rgb(68, 88, 144)');
 
-        // Switch the image and compare its src with the previous one
-        CameraScreen.compareImagesSrc();
-    });
+    // stop images and verify
+    CameraScreen.stopCamera();
+    CameraScreen.stopCameraBtn.should('have.css', 'background-color', 'rgb(255, 153, 0)');
 
-    it('delete dashboard', () => {
-        // show all items
-        MainScreen.showAllItems();
+    // Switch the image and compare its src with the previous one
+    CameraScreen.compareImagesSrc();
+  });
 
-        // delete dashboard element
-        MainScreen.clickDashboardElement();
-        MainScreen.moreActions();
-        MainScreen.removeElement();
-        MainScreen.acceptDelete();
-        MainScreen.animateElement.should('not.exist');
-    });
+  it('delete dashboard', () => {
+    // show all items and click dashboard
+    MainScreen.showAllItems();
+    MainScreen.clickDashboardElement(components.displayLayout.title);
+
+    // delete dashboard element
+    MainScreen.deleteCurrentElement();
+    MainScreen.animateElement.should('not.exist');
+  });
 });

@@ -1,10 +1,15 @@
+const selectors = {
+    cameraName: '#form-name',
+    loadDelayInput: 'input[aria-label="Image load delay (milliseconds)"]',
+};
+
 class CameraWindow {
     get cameraName() {
-        return cy.get('#form-name');
+        return cy.get(selectors.cameraName);
     }
 
     get loadDelayInput() {
-        return cy.get('input[aria-label="Image load delay (milliseconds)"]');
+        return cy.get(selectors.loadDelayInput);
     }
 
     get createCameraBtn() {

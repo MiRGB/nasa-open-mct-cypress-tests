@@ -1,0 +1,29 @@
+{
+  "camera": {
+    "title": "CameraA",
+    "delay": "10000"
+  },
+  "clock": {
+    "title": "Clock"
+  },
+  "displayLayout": {
+    "title": "Dashboard"
+  },
+  "overlayPlot": {
+    "title": "SensorA Plot"
+  },
+  "sineWaveGenerator": {
+    "title": "SensorA",
+    "period": "30",
+    "amplitude": "3",
+    "offset": "1",
+    "dataRate": "1"
+  },
+  "stateGenerator": {
+    "title": "EmitterA",
+    "duration": "1"
+  },
+  "telemetryTable": {
+    "searchPhrase": "test"
+  }
+}

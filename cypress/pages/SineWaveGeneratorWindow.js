@@ -1,22 +1,30 @@
+const selectors = {
+    sinWaveGenName: 'input[id="form-name"]',
+    sinWaveGenPeriod: 'input[aria-label="Period"]',
+    sinWaveGenAmplitude: 'input[aria-label="Amplitude"]',
+    sinWaveGenOffset: 'input[aria-label="Offset"]',
+    sinWaveGenDataRate: 'input[aria-label="Data Rate (hz)"]',
+};
+
 class SineWaveGeneratorWindow {
     get sinWaveGenName() {
-        return cy.get('input[id="form-name"]');
+        return cy.get(selectors.sinWaveGenName);
     }
 
     get sinWaveGenPeriod() {
-        return cy.get('input[aria-label="Period"]');
+        return cy.get(selectors.sinWaveGenPeriod);
     }
 
     get sinWaveGenAmplitude() {
-        return cy.get('input[aria-label="Amplitude"]');
+        return cy.get(selectors.sinWaveGenAmplitude);
     }
 
     get sinWaveGenOffset() {
-        return cy.get('input[aria-label="Offset"]');
+        return cy.get(selectors.sinWaveGenOffset);
     }
 
     get sinWaveGenDataRate() {
-        return cy.get('input[aria-label="Data Rate (hz)"]');
+        return cy.get(selectors.sinWaveGenDataRate);
     }
 
     get sinWaveGenCreateBtn() {

@@ -1,38 +1,50 @@
+const selectors = {
+    hideInspectPanelBtn: 'button[name="Collapse Inspect Pane"]',
+    inspectField: '.c-inspector__content',
+    showInspectPanelBtn: 'button[name="Expand Inspect Pane"]',
+    hideBrowsePanelBtn: 'button[name="Collapse Browse Pane"]',
+    browseField: 'div[aria-label="Main Tree"]',
+    showBrowsePanelBtn: 'button[name="Expand Browse Pane"]',
+    snapshotsText: 'Notebook Snapshots',
+    showSnapshotsBtn: 'button[aria-label="Show Snapshots"]',
+    hideSnapshotsBtn: 'button[aria-label="Hide Snapshots"]',
+};
+
 class UserInterface {
     get hideInspectPanelBtn() {
-        return cy.get('button[name="Collapse Inspect Pane"]');
+        return cy.get(selectors.hideInspectPanelBtn);
     }
 
     get inspectField() {
-        return cy.get('.c-inspector__content');
+        return cy.get(selectors.inspectField);
     }
 
     get showInspectPanelBtn() {
-        return cy.get('button[name="Expand Inspect Pane"]');
+        return cy.get(selectors.showInspectPanelBtn);
     }
 
     get hideBrowsePanelBtn() {
-        return cy.get('button[name="Collapse Browse Pane"]');
+        return cy.get(selectors.hideBrowsePanelBtn);
     }
 
     get browseField() {
-        return cy.get('div[aria-label="Main Tree"]');
+        return cy.get(selectors.browseField);
     }
 
     get showBrowsePanelBtn() {
-        return cy.get('button[name="Expand Browse Pane"]');
+        return cy.get(selectors.showBrowsePanelBtn);
     }
 
     get snapshotsText() {
-        return cy.contains('div', 'Notebook Snapshots');
+        return cy.contains('div', selectors.snapshotsText);
     }
 
     get showSnapshotsBtn() {
-        return cy.get('button[aria-label="Show Snapshots"]');
+        return cy.get(selectors.showSnapshotsBtn);
     }
 
     get hideSnapshotsBtn() {
-        return cy.get('button[aria-label="Hide Snapshots"]');
+        return cy.get(selectors.hideSnapshotsBtn);
     }
 
     showSnapshots() {
@@ -40,7 +52,7 @@ class UserInterface {
     }
 
     hideSnapshots() {
-        this.hideSnapshotsBtn.click()
+        this.hideSnapshotsBtn.click();
     }
 
     showBrowsePanel() {

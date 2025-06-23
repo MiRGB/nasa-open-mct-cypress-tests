@@ -1,22 +1,39 @@
+const selectors = {
+    sineWaveGenerator: 'li[aria-label="Sine Wave Generator"]',
+    clockElement: 'ul > li.icon-clock',
+    overlayPlot: 'li[aria-label="Overlay Plot"]',
+    displayLayout: 'li[aria-label="Display Layout"]',
+    cameraImg: 'li[aria-label="Example Imagery"]',
+    stateGenerator: 'li[aria-label="State Generator"]',
+};
+
 class CreateMenu {
     get sineWaveGenerator() {
-        return cy.get('li[aria-label="Sine Wave Generator"]');
+        return cy.get(selectors.sineWaveGenerator);
     }
 
     get clockElement() {
-        return cy.get('ul > li.icon-clock');
+        return cy.get(selectors.clockElement);
     }
 
     get overlayPlot() {
-        return cy.get('li[aria-label="Overlay Plot"]');
+        return cy.get(selectors.overlayPlot);
     }
 
     get displayLayout() {
-        return cy.get('li[aria-label="Display Layout"]');
+        return cy.get(selectors.displayLayout);
     }
 
     get cameraImg() {
-        return cy.get('li[aria-label="Example Imagery"]');
+        return cy.get(selectors.cameraImg);
+    }
+
+    get stateGenerator() {
+        return cy.get(selectors.stateGenerator);
+    }
+
+    createStateGenerator() {
+        this.stateGenerator.click();
     }
 
     createCameraImg() {

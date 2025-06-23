@@ -1,22 +1,30 @@
+const selectors = {
+    successAlert: '.c-message-banner__message',
+    notificationsNumberBar: 'button[aria-label="Review 1 Notification"]',
+    notificationItem: 'div[role="listitem"]',
+    notificationTitleText: 'Save successful',
+    clearAllBtn: '.js-overlay__button'
+};
+
 class Notifications {
     get successAlert() {
-        return cy.get('.c-message-banner__message');
+        return cy.get(selectors.successAlert);
     }
 
     get notificationsNumberBar() {
-        return cy.get('button[aria-label="Review 1 Notification"]');
+        return cy.get(selectors.notificationsNumberBar);
     }
 
     get notificationItem() {
-        return cy.get('div[role="listitem"]');
+        return cy.get(selectors.notificationItem);
     }
 
     get notificationTitle() {
-        return cy.contains('div', 'Save successful');
+        return cy.contains('div', selectors.notificationTitleText);
     }
 
     get clearAllBtn() {
-        return cy.get('.js-overlay__button');
+        return cy.get(selectors.clearAllBtn);
     }
 
     clearAllNotifications() {
