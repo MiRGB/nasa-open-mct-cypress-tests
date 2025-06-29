@@ -142,3 +142,10 @@ This script:
 I worked on automated tests for NASA Open MCT — NASA's modern platform for space data visualization, used by the agency and the scientific community worldwide.
 
 This project is my independent educational initiative aimed at developing practical skills in web application testing.
+
+---
+
+## 📄 Copyright Notice
+
+Copyright © MiRGB, 2025.  
+All rights reserved.
