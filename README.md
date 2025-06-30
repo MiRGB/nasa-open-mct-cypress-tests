@@ -7,7 +7,7 @@ This project is part of my portfolio and demonstrates Cypress testing for comple
 ---
 
 👉 **Check out the generated Allure report here:**  
-📈 [**View Allure Report**](https://mirgb.github.io/NASA_Open_MCT_Cypress_tests/)
+📈 [**View Allure Report**](https://mirgb.github.io/nasa-open-mct-cypress-tests/)
 
 ---
 
@@ -43,8 +43,8 @@ Event listeners configured to:
 
 Clone the repository and install dependencies:
 
-`git clone https://github.com/MiRGB/NASA_Open_MCT_Cypress_tests.git`  
-`cd NASA_OpenMCT_Cypress_tests`  
+`git clone https://github.com/MiRGB/nasa-open-mct-cypress-tests.git`  
+`cd nasa-open-mct-cypress-tests`  
 `npm install`
 
 ---
@@ -145,7 +145,7 @@ This project is my independent educational initiative aimed at developing practi
 
 ---
 
-## 📄 Copyright Notice
+## 📄 License
 
-Copyright © MiRGB, 2025.  
-All rights reserved.
+⚠️ This project is not open source. All rights reserved.  
+For review purposes only. See the [LICENSE](./LICENSE) file for full terms.
