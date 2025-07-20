@@ -1,8 +1,8 @@
 # 🚀 NASA Open MCT Cypress Tests
 
-Automated end-to-end tests using **Cypress** for [NASA Open MCT](https://github.com/nasa/openmct) — a modern web-based platform for mission operations data visualization.
+Automated end-to-end tests using **Cypress** for [NASA Open MCT](https://github.com/nasa/openmct) — a modern, web-based platform developed by NASA (National Aeronautics and Space Administration) for visualizing mission operations data from actual space missions.
 
-This project is part of my portfolio and demonstrates Cypress testing for complex front-end applications.
+This project is part of my portfolio and demonstrates Cypress testing for complex front-end applications in the context of spaceflight software.
 
 ---
 
